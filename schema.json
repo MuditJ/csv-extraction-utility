@@ -1,0 +1,18 @@
+{
+		"clusters": ["GMT","RTP","RCDN","SHN","SJC"],
+		"data":
+		[
+			{
+				"file": "callpark.csv",
+
+				"fields": ["DESCRIPTION","ROUTE PARTITION", "UNIFIED CALLMANAGER"]
+			},
+
+			{
+				"file": "css.csv",
+
+				"fields": ["DESCRIPTION", "TYPE OF PARTITION USAGE"]
+			}
+		]
+	
+}

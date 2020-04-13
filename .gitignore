@@ -1,0 +1,3 @@
+#Files and directories to be ignored by git:
+*.pyc
+env/

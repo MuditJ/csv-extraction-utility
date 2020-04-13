@@ -1,0 +1,19 @@
+{
+"input":  
+	{ 	"clusters": ["GMT","RTP","RCDN","SHN","SJC"],
+		"data":
+		[
+			{
+				"file": "something.csv",
+
+				"fields": ["Field_A","Field_B" ]
+			},
+
+			{
+				"file": "something_else.csv",
+
+				"fields": ["Field_A", "Field_C"]
+			}
+		]
+	}
+}

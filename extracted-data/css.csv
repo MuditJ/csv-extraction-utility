@@ -1,0 +1,158 @@
+DESCRIPTION,TYPE OF PARTITION USAGE
+Unlimited Dialing,General
+Auto-Registration,General
+CTS endpoints and Trunks where TIP is required,General
+,General
+Hybrid_Media_to_VCS_Failover (look at consolidate),General
+Unlimited Dialing,General
+CORE CMM - MobilityManager,General
+No restriction,General
+Unlimited CFA,General
+,General
+Apply to Non-User CFA CSS to Block Call Forward,General
+Anything that's not a CTS,General
+Hybrid_Media_to_VCS_Failover,General
+8Digit Partition Only,General
+MP DTMF Test with CUCIMOC,General
+,General
+Apply to Gatekeeper for Inbound Call Routing,General
+,General
+E164 Partition Only,General
+,General
+Campus and Local Dialing,General
+No restriction,General
+Restricted CSS for Voicemail ports,General
+Local Emergency Call Routing,General
+DESCRIPTION,TYPE OF PARTITION USAGE
+Auto-Registration,General
+Apply to Gatekeeper for Inbound Call Routing,General
+Hybrid_Media_to_VCS_Failover,General
+Local Emergency Call Routing,General
+CORE CMM - MobilityManager,General
+Campus and Local Dialing,General
+Unlimited CFA,General
+RemotePhones-911CallsToIVR,General
+8Digit Partition Only,General
+E164 Partition Only,General
+,General
+Unlimited Dialing,General
+DESCRIPTION,TYPE OF PARTITION USAGE
+CSS for call fowarding for all phones,General
+Calling search Space for lab gateways,General
+RemotePhones-911CallsToIVR,General
+Unlimited CFA,General
+Incoming-IME-Called,General
+Outgoing-IME-Calling,General
+Update Called Party numbers for BE 3k,General
+Incoming-RCDN-GW-Called-Party,General
+Delete this one-Asif 0723-2019,General
+,General
+Incoming-IME-Calling,General
+Outgoing-RCDN-GW-Calling-Party,General
+TIE Trunk,General
+Delete this one-Asif 0723-2019,General
+In-Coming-CLID-Core8,General
+,General
+be3k,General
+Delete this one-Asif 0723-2019,General
+Auto-Registration,General
+Unlimited Calling Enabled-Asif Test,General
+MVS Station Calling Search Space,General
+Incoming-IME-Calling-1,General
+,General
+Delete this one-Asif 0723-2019,General
+Partition Rollover 1,General
+,General
+Incoming-RCDN-GW-Calling-Party,General
+Outgoing-RCDN-GW-Called-Party,General
+Remote Destination Profile number to E164,General
+Delete this one-Asif 0723-2019,General
+Device Level CSS for Emergency 911 Calls Only-Asif,General
+,General
+,General
+Outgoing-IME-Called,General
+Restricted for lab calls only,General
+Unlimited Calling-No International,General
+,General
+Hybrid_Media_to_VCS_Failover,General
+DESCRIPTION,TYPE OF PARTITION USAGE
+Unlimited CFA for SHN Users Desk Phones,General
+CORE 2nd Line,General
+Local Emergency Call Routing,General
+Restricted CSS for MWI Ports,General
+Apply to Gatekeeper for Inbound Call Routing,General
+Hybrid_Media_to_VCS_Failover,General
+Auto-Registration,General
+CORE E164 Localization,General
+Apply to GK For Inbound Call Routing Only,General
+Apply to CFA CSS to CORE8Digits Only,General
+Unlimited Dialing,General
+,General
+NANP to E.164,General
+Apply to Lab Connections for Inbound Call Routing,General
+E164 Partition Only,General
+8Digit Partition Only,General
+,General
+CSS for users in infosys with no pstn access,General
+CORE CMM - MobilityManager,General
+Unlimited Calls To PSTN,General
+Restricted CSS for Voicemail ports only,General
+BGL CSS for Single Liner Phones,General
+BGL 8Digit PSTN,General
+Same as 8digit css plus international dialing,General
+Apply to CFA CSS to CORE8 + Local+LD,General
+Hybrid_Media_to_VCS_Failover,General
+For Auto-Registration Phones Only,General
+CORE E164 Transformation,General
+8 digit calling internal and other clusters,General
+DESCRIPTION,TYPE OF PARTITION USAGE
+Unlimited CFA,General
+Hybrid_Media_to_VCS_Failover,General
+CSS for Incoming Calls from TSBU,General
+Local Emergency Call Routing,General
+RDPs only. for VCS integration.contact satish-Asif,General
+Remove + for incoming calls,General
+Test-Called-Party-CSS,General
+Apply to MCU Gatekeeper for Inbound Call Routing,General
+Unlimited Dialing for Seattle Alpha users,General
+Calls a Cisco Employee can make,General
+,General
+Orion Test Dialing-Asif-Debugging DTMF Issue,General
+International CSS for E.164 format dialing,General
+Use in CMM RDP CSS only to display E164 in CID,General
+8Digit Partition Only,General
+Localize the Outgoing calling Party,General
+IME Called Party Transformation CSS,General
+Campus and Local Dialing,General
+Unlimited Dialing,General
+Use in Phones CPN_CSS to display E164 in CID,General
+Used in UMC Route Point CSS only,General
+Sanjose Long Distance,General
+CSS for Telepresence Endpoints only,General
+Apply to Non-User CFA CSS to Block Call Forward,General
+CSS for MVS only,General
+,General
+Unlimited without Internationl Dialing,General
+Apply to Gatekeeper for Inbound Call Routing,General
+Contains RP and end devices for CER,General
+RemotePhones-911CallsToIVR,General
+Restricted CSS for Unity Live Reply Only,General
+Campus and Local Dialing,General
+Apply to Gatekeeper for Inbound Call Routing,General
+Core 2nd Line,General
+E164 Partition Only,General
+changing 8 digit caller-ID to E.164,General
+IME Calling Party Transformation CSS,General
+Unlimited Dialing for Boulder Alpha users,General
+For Informacast Paging,General
+8Digit Partition Only,General
+Boulder Local Emergency Call Routing,General
+,General
+Apply to Lab Connections for Inbound Call Routing,General
+Used in CMM Route Point CSS only,General
+Used to remove + from SNR call calling party,General
+AsifRemoteDestProfiles_Test,General
+Auto-Registration,General
+Restricted CSS for Voicemail ports,General
+Seattle Local Emergency Call Routing,General
+Used By MWI Numbers Only,General
