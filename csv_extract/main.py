@@ -1,16 +1,11 @@
 import os,json,csv
-import src.exceptions as exceptions 
-
+import csv_extract.exceptions as exceptions
 
 #Path to the schema file. This is also where the directory holding the processed csvs will be stored
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 #This is the path to the directory holding the csvs
 CSV_DIR = os.path.join(os.environ['HOME'],'Downloads/All_CUCM-Config2')
-
-#Name of the json schema file to be analyzed for fields to be extracted. 
-SCHEMA_FILE = 'schema.json'
-
 
 def extract_fields(schema_file, csv_dir, base_dir = BASE_DIR):
 	""" Business logic for the package
