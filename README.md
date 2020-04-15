@@ -4,9 +4,13 @@ JSON schema files are provided to specify the structure that is required.
 
 Steps:
 
+Clone this repository and cd into the directory
+
 Ideally, create a virtual environment before starting:
 python3 -m venv env
 source env/bin/activate
+
+Now, start a Python session.
 
 From the base directory, the utility tool can be run from the commandline after import:
 from csv_extract import extract_fields
