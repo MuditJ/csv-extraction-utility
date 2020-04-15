@@ -2,7 +2,6 @@ import os,json,csv
 import src.exceptions as exceptions 
 
 
-
 #Path to the schema file. This is also where the directory holding the processed csvs will be stored
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -13,7 +12,7 @@ CSV_DIR = os.path.join(os.environ['HOME'],'Downloads/All_CUCM-Config2')
 SCHEMA_FILE = 'schema.json'
 
 
-def extract_fields(schema_file, csv_dir = CSV_DIR, base_dir = BASE_DIR):
+def extract_fields(schema_file, csv_dir, base_dir = BASE_DIR):
 	""" Business logic for the package
 
 	Method signature:
@@ -24,7 +23,6 @@ def extract_fields(schema_file, csv_dir = CSV_DIR, base_dir = BASE_DIR):
 	schema_file:  Name of the json schema file to be analyzed for fields to extract
 	
 	csv_dir: This is the path to the directory holding the csvs from which data is to be extracted. 
-	If argument not specified, it takes the value specified by BASE_DIR in defaults.py
 	
 	base_dir: Path to the schema file. This will be joined with the schema_file argument to open and read the JSON schema file
 	This is also where the extracted-data subdirectory holding the processed csvs will be stored
@@ -37,20 +35,19 @@ def extract_fields(schema_file, csv_dir = CSV_DIR, base_dir = BASE_DIR):
 		try:
 			assert os.path.exists(base_dir)
 		except AssertionError as e:
-			print(f'Given directory path does not exist or is invalid')
+			print('Given directory path does not exist or is invalid')
 			return
 		finally:
 			try:
 				assert os.path.exists(os.path.join(base_dir,schema_file))
 			except AssertionError:
-				print(f'No file with such name exists in given base directory')
+				print('No file with such name exists in given base directory')
 				return
 
-	if csv_dir:
-		try:
-			assert os.path.exists(csv_dir)
-		except AssertionError as e:
-			print(f'Given directory path for csv files does not exist or is invalid')
+	try:
+		assert os.path.exists(csv_dir)
+	except AssertionError as e:
+		print('Given directory path for csv files does not exist or is invalid')
 
 
 	#Creating a sub-directory in the base directory to hold new csvs with extracted field data
@@ -90,7 +87,7 @@ def extract_fields(schema_file, csv_dir = CSV_DIR, base_dir = BASE_DIR):
 						field_headers = next(reader)
 						all_fields = {val:ind for ind,val in enumerate(field_headers)}
 						if any (field not in field_headers for field in required_fields):
-							raise exceptions.SchemaMismatchError(f'The specified fields for the file {file} in the JSON schema file do not match up with the actual fields present in it.')
+							raise exceptions.SchemaMismatchError('The specified fields for the file {} in the JSON schema file do not match up with the actual fields present in it.'.format(file))
 							return
 						else:
 							target_indices = [all_fields[field] for field in required_fields]

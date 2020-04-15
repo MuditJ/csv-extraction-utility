@@ -1,6 +1,5 @@
-{
-"input":  
-	{ 	"clusters": ["GMT","RTP","RCDN","SHN","SJC"],
+  
+{ 	"clusters": ["GMT","RTP","RCDN","SHN","SJC"],
 		"data":
 		[
 			{
@@ -16,4 +15,3 @@
 			}
 		]
 	}
-}
