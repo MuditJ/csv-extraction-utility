@@ -11,11 +11,11 @@ def extract_fields(schema_file, csv_dir, base_dir = BASE_DIR):
 	""" Business logic for the package
 
 	Method signature:
-	extract_fields(schema_file, csv_dir = CSV_DIR,base_dir = BASE_DIR,)
+	extract_fields(schema_file, csv_dir,base_dir = BASE_DIR,)
 
 	It takes the following arguments:
 
-	schema_file:  Name of the json schema file to be analyzed for fields to extract
+	schema_file:  Name of the json schema file to be analyzed for fields to extract. To try things out, pass the schema.json file present already
 	
 	csv_dir: This is the path to the directory holding the csvs from which data is to be extracted. 
 	
