@@ -1,12 +1,6 @@
 import os,json,csv
 import csv_extract.exceptions as exceptions
-
-#Path to the schema file. This is also where the directory holding the processed csvs will be stored
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-#This is the path to the directory holding the csvs
-CONFIG_DATA_PATH = os.path.join(os.environ['HOME'],'Downloads/All_CUCM-Config2')
-
+from csv_extract.constants import BASE_DIR,CONFIG_DATA_PATH
 
 def handle_exceptions(schema_file,config_data_path,base_dir = BASE_DIR):
 
@@ -44,7 +38,7 @@ def handle_exceptions(schema_file,config_data_path,base_dir = BASE_DIR):
 
 def extract_from_json(schema_file,base_dir):
 
-""" Read the JSON schema file and get back the files and the corresponding fields to extract """
+	""" Read the JSON schema file and get back the files and the corresponding fields to extract """
 	schema_path = os.path.join(base_dir,schema_file)
 	with open(schema_path,'r') as json_file:
 		try:
@@ -57,7 +51,7 @@ def extract_from_json(schema_file,base_dir):
 			clusters = json_data['clusters']
 			files  = [x['file'] for x in json_data['data']]
 			fields = [x['fields'] for x in json_data['data']]
-	return list(clusters,files,fields)
+	return ([clusters,files,fields])
 
 
 def extract_fields(schema_file, config_data_path, base_dir = BASE_DIR):
