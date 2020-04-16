@@ -7,43 +7,30 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #This is the path to the directory holding the csvs
 CSV_DIR = os.path.join(os.environ['HOME'],'Downloads/All_CUCM-Config2')
 
-def extract_fields(schema_file, csv_dir, base_dir = BASE_DIR):
-	""" Business logic for the package
 
-	Method signature:
-	extract_fields(schema_file, csv_dir,base_dir = BASE_DIR,)
-
-	It takes the following arguments:
-
-	schema_file:  Name of the json schema file to be analyzed for fields to extract. To try things out, pass the schema.json file present already
-	
-	csv_dir: This is the path to the directory holding the csvs from which data is to be extracted. 
-	
-	base_dir: Path to the schema file. This will be joined with the schema_file argument to open and read the JSON schema file
-	This is also where the extracted-data subdirectory holding the processed csvs will be stored
-
-	"""
-
+def handle_exceptions(schema_file,csv_dir,base_dir = BASE_DIR):
 
 	#Ensuring that the directory path arguments are correct/valid
-	if base_dir:
-		try:
-			assert os.path.exists(base_dir)
-		except AssertionError as e:
-			print('Given directory path does not exist or is invalid')
-			return
-		finally:
-			try:
-				assert os.path.exists(os.path.join(base_dir,schema_file))
-			except AssertionError:
-				print('No file with such name exists in given base directory')
-				return
 
-	try:
-		assert os.path.exists(csv_dir)
-	except AssertionError as e:
-		print('Given directory path for csv files does not exist or is invalid')
+	if os.path.exists(base_dir):
 
+		if os.path.exists(os.path.join(base_dir,schema_file)):
+			#Path to schema file is valid and present.
+			pass
+		else:
+			#Raise SchemaNotFoundError
+			raise exceptions.SchemaNotFoundError("""The specified schema file was not found. Please re-check the name provided. """)
+
+	else:
+		#The path specified as the base_dir does not exist
+		raise exceptions.BaseDirectoryError("""Specified base directory path does not exist. Please check the input provided.
+				This should be the directory holding your JSON schema file""")
+		
+	#Same validation checks for csv_dir
+	if os.path.exists(csv_dir):
+		pass
+	else:
+		raise exceptions.CSVDirectoryError(""" Specified directory for the CSVs which are to be analyzed does not exist. Please check the input provided """)
 
 	#Creating a sub-directory in the base directory to hold new csvs with extracted field data
 		
@@ -56,10 +43,28 @@ def extract_fields(schema_file, csv_dir, base_dir = BASE_DIR):
 		os.chdir(os.path.join(base_dir,'extracted-data'))
 		print(os.getcwd())
 
+def extract_fields(schema_file, csv_dir, base_dir = BASE_DIR):
+	""" Business logic for the package
 
+	Method signature:
+	extract_fields(schema_file, csv_dir,base_dir = BASE_DIR)
+
+	It takes the following arguments:
+
+	schema_file:  Name of the json schema file to be analyzed for fields to extract. To try things out, pass the schema.json file present already
+	
+	csv_dir: This is the path to the directory holding the csvs from which data is to be extracted. 
+	
+	base_dir: Path to the schema file. This will be joined with the schema_file argument to open and read the JSON schema file
+	This is also where the extracted-data subdirectory holding the processed csvs will be stored
+
+	"""
+
+	#Do exception handling:
+	handle_exceptions(schema_file,csv_dir,base_dir)
+
+	#Core logic
 	schema_path = os.path.join(base_dir,schema_file)
-	#print(schema_path)
-
 	with open(schema_path,'r') as json_file:
 		try:
 			json_data = json.load(json_file)
